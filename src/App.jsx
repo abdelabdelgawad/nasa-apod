@@ -2,7 +2,7 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import { useEffect, useState } from 'react'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
