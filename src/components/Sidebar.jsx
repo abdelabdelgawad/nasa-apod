@@ -9,8 +9,8 @@ function Sidebar(props) {
             <div className = "sidebarContents">
                 <h2>{data?.title}</h2>
                 <div>
-                    <p>Description</p>
-                    <p>{data?.explanation}</p>
+                    <h3>By: {data?.copyright}</h3>
+                    <p><strong>Explanation: </strong> {data?.explanation}</p>
                 </div>
                 <button onClick = {handleToggleModal}>
                     <i className="fa-solid fa-arrow-right"></i>

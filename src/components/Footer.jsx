@@ -8,8 +8,9 @@ function Footer(props) {
         <footer>
             <div className = "apodGradient"></div>
             <div>
-                <h2>{data?.title}</h2>
-                <h1>NASA APOD</h1>
+                <h1>{data?.title}</h1>
+                <h2>By: {data?.copyright}</h2>
+                <h3>NASA Astronomy Picture of the Day</h3>
             </div>
             <button onClick = {handleToggleModal}>
                 <i className="fa-solid fa-circle-info"></i>
