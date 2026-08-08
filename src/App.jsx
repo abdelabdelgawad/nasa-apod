@@ -2,6 +2,7 @@ import Main from './components/Main'
 import Footer from './components/Footer'
 import Sidebar from './components/Sidebar'
 import { useEffect, useState } from 'react'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
 			{data && (<Main data = {data} />)}
 			<Sidebar data = {data} show = {showModal} handleToggleModal = {handleToggleModal} />
 			{data && (<Footer data = {data} handleToggleModal = {handleToggleModal} />)}
+
+			<Analytics />
 		</>
 	)
 }
