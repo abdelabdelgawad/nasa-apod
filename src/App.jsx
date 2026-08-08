@@ -29,7 +29,7 @@ function App() {
 	return (
 		<>
 			{data && (<Main data = {data} />)}
-			{showModal && (<Sidebar data = {data} handleToggleModal = {handleToggleModal} />)}
+			<Sidebar data = {data} show = {showModal} handleToggleModal = {handleToggleModal} />
 			{data && (<Footer data = {data} handleToggleModal = {handleToggleModal} />)}
 		</>
 	)
