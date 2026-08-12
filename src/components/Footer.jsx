@@ -7,7 +7,7 @@ function Footer(props) {
     return (
         <footer>
             <div className = "apodGradient"></div>
-            <div>
+            <div className = "apodFooter">
                 <h1>{data?.title}</h1>
                 <h2>By: {data?.copyright}</h2>
                 <h3>NASA Astronomy Picture of the Day</h3>

@@ -82,6 +82,10 @@ footer button:hover {
     background: linear-gradient(to top, #181717, rgba(255,255,255,0));
 }
 
+.apodFooter:hover {
+    opacity: 0.1;
+}
+
 .sidebar {
     position: fixed;
     inset: 0;
