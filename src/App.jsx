@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 function App() {
 
 	const [data, setData] = useState(null)
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(true)
 	const [showModal, setShowModal] = useState(false)
 
 	function handleToggleModal() {
@@ -15,8 +15,9 @@ function App() {
 	}
 
 	useEffect(() => {
+		const date = new Date().toISOString().split('T')[0]
 		const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
-		const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}`
+		const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${date}`
 
 		fetch(url)
 			.then((response) => response.json())
@@ -25,10 +26,12 @@ function App() {
 				console.log('DATA\n', data)
 			})
 			.catch((error) => console.error(error))
+			.finally(() => setLoading(false))
 	}, [])
 
 	return (
 		<>
+			{loading && (<p className = "loadingMessage">Fetching data, please wait...</p>)}
 			{data && (<Main data = {data} />)}
 			<Sidebar data = {data} show = {showModal} handleToggleModal = {handleToggleModal} />
 			{data && (<Footer data = {data} handleToggleModal = {handleToggleModal} />)}

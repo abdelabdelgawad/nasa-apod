@@ -24,6 +24,11 @@
   display: relative;
 }
 
+.loadingMessage {
+    margin: auto;
+    font-size: 1.25rem;
+}
+
 .apodContainer {
     display: flex;
     flex-direction: column;
