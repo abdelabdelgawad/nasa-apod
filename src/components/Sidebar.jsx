@@ -38,7 +38,7 @@ function Sidebar(props) {
             <div className = "sidebarContents" onTransitionEnd={handleTransitionEnd}>
                 <h2>{data?.title}</h2>
                 <div>
-                    <h3>By: {data?.copyright}</h3>
+                    <h3>By: {data?.copyright || "No Copyright Information Available"}</h3>
                     <p><strong>Explanation: </strong> {data?.explanation}</p>
                 </div>
                 <button onClick = {handleToggleModal}>

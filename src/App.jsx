@@ -17,7 +17,9 @@ function App() {
 	useEffect(() => {
 		const date = new Date().toISOString().split('T')[0]
 		const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
+		console.log(date)
 		const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${date}`
+		// const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${'2026-3-22'}`
 
 		fetch(url)
 			.then((response) => response.json())
