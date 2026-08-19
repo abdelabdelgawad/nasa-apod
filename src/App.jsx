@@ -19,7 +19,10 @@ function App() {
 		const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
 		console.log(date)
 		const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${date}`
+		// video test
 		// const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${'2026-3-22'}`
+		// image test
+		// const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${'2026-8-12'}`
 
 		fetch(url)
 			.then((response) => response.json())
