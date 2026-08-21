@@ -81,6 +81,22 @@ footer button:hover {
     cursor: pointer;
 }
 
+.interactionZone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dateInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .apodGradient {
     position: absolute;
     inset: 0;

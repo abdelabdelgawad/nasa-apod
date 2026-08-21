@@ -9,21 +9,21 @@ function App() {
 	const [data, setData] = useState(null)
 	const [loading, setLoading] = useState(true)
 	const [showModal, setShowModal] = useState(false)
+	const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0])
 
 	function handleToggleModal() {
 		setShowModal(!showModal)
 	}
 
-	useEffect(() => {
-		const date = new Date().toISOString().split('T')[0]
-		const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
-		console.log(date)
-		const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${date}`
-		// video test
-		// const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${'2026-3-22'}`
-		// image test
-		// const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${'2026-8-12'}`
+	function handleDateChange(date) {
+		setSelectedDate(date)
+	}
 
+	useEffect(() => {
+		const NASA_KEY = import.meta.env.VITE_NASA_API_KEY
+		const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}&date=${selectedDate}`
+
+		setLoading(true)
 		fetch(url)
 			.then((response) => response.json())
 			.then((data) => {
@@ -32,14 +32,14 @@ function App() {
 			})
 			.catch((error) => console.error(error))
 			.finally(() => setLoading(false))
-	}, [])
+	}, [selectedDate])
 
 	return (
 		<>
 			{loading && (<p className = "loadingMessage">Fetching data, please wait...</p>)}
 			{data && (<Main data = {data} />)}
 			<Sidebar data = {data} show = {showModal} handleToggleModal = {handleToggleModal} />
-			{data && (<Footer data = {data} handleToggleModal = {handleToggleModal} />)}
+			{data && (<Footer data = {data} handleToggleModal = {handleToggleModal} selectedDate = {selectedDate} handleDateChange = {handleDateChange} />)}
 
 			<Analytics />
 		</>
