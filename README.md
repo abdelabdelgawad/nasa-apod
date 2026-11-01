@@ -1,5 +1,7 @@
 # NASA APOD
 
+NOTE: NASA's APOD API has migrated to a new WordPress API, and the legacy version has discontinued support. As a result, this page is not currently functinoal. We thank you for your patience as we work to update this page.
+
 A React app that displays NASA's Astronomy Picture of the Day, fetched live from NASA's [APOD API](https://api.nasa.gov/).
 
 **Live: [nasa-apod.abdelgawad.dev](https://nasa-apod.abdelgawad.dev/)**
