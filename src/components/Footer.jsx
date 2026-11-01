@@ -18,7 +18,7 @@ function Footer(props) {
             <div className = "apodGradient"></div>
             <div className = "apodFooter">
                 <h1>{data?.title}</h1>
-                <h2>By: {data?.copyright || "No Copyright Information Available"}</h2>
+                <h2>{data?.copyright ? <>Credit & Copyright: <span dangerouslySetInnerHTML={{ __html: data.copyright }} /></> : "No Copyright Information Available"}</h2>
                 <h3>NASA Astronomy Picture of the Day</h3>
             </div>
             <div className="interactionZone">
