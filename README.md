@@ -1,6 +1,6 @@
 # NASA APOD
 
-NOTE: NASA's APOD API has migrated to a new WordPress API, and the legacy version has discontinued support. As a result, this page is not currently functinoal. We thank you for your patience as we work to update this page.
+NOTE: This site does not currently support video media.
 
 A React app that displays NASA's Astronomy Picture of the Day, fetched live from NASA's [APOD API](https://api.nasa.gov/).
 
@@ -8,7 +8,7 @@ A React app that displays NASA's Astronomy Picture of the Day, fetched live from
 
 ## Features
 
-- Displays the current day's featured image, GIF, or video
+- Displays the current day's featured image
 - Slide-out panel with the title, copyright, and full explanation
 - Responsive layout for mobile and desktop
 
